@@ -1,21 +1,22 @@
 import React from "react";
 import styled from "styled-components";
-import Theam from "../theam";
+import Logo from "./Logo";
+
 // import profile from "../Assets/profile.png";
 
-const NavContainer = styled.div<{ theam: any }>`
+const NavContainer = styled.div`
   height: 80px;
   width: 98vw;
   padding: 10px;
   margin: 10px;
   overflow: hidden;
-  background-color: ${(props) => props.theam.tertiaryColor};
-  color: ${(props) => props.theam.secondaryColor};
+  background-color: ${(props) => props.theme.main};
+  color: ${(props) => props.theme.main};
   display: flex;
   border-radius: 11px;
 `;
 
-const NavLinkContainer = styled.div<{ theam: any }>`
+const NavLinkContainer = styled.button`
   height: 50px;
   width: 90px;
   border-radius: 5px;
@@ -23,30 +24,35 @@ const NavLinkContainer = styled.div<{ theam: any }>`
   font-family: "Nunito";
   font-weight: 700;
   display: flex;
+  justify-content: center;
   align-items: center;
+  border-radius: 63px;
+  background: #454545;
+  box-shadow: inset 24px -24px 47px #303030, inset -24px 24px 47px #5a5a5a;
+  color: white;
+  border: 0;
+  z-index: 1;
   :hover {
-    background-color: ${(props) => props.theam.primaryColor};
-    backdrop-filter: 5px;
+    border-radius: 63px;
+    background: #454545;
+    box-shadow: 24px -24px 47px #303030, -24px 24px 47px #5a5a5a;
   }
-`;
-const ProfileImg = styled.div`
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
-  /* background-image: url(../Assets/profile.png); */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 `;
 const Nav: React.FC = () => {
   return (
     <>
-      <NavContainer theam={Theam}>
-        {/* <ProfileImg /> */}
-        <div style={{ display: "flex", gap: "40px" }}>
-          <NavLinkContainer theam={Theam}>Home</NavLinkContainer>
-          <NavLinkContainer theam={Theam}>About</NavLinkContainer>
-          <NavLinkContainer theam={Theam}>Contact</NavLinkContainer>
+      <NavContainer>
+        <Logo></Logo>
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "space-evenly",
+            alignItems: "center",
+          }}
+        >
+          <NavLinkContainer>Home</NavLinkContainer>
+          <NavLinkContainer>Contact</NavLinkContainer>
         </div>
       </NavContainer>
     </>
