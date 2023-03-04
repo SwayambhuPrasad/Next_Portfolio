@@ -18,7 +18,8 @@ const NavContainer = styled.div`
 
 const NavLinkContainer = styled.button`
   height: 50px;
-  width: 90px;
+
+  width: 80px;
   border-radius: 5px;
   font-size: 20px;
   font-family: "Nunito";
